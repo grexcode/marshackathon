@@ -25,19 +25,11 @@ font-size: 22px;
   max-width: 100%;
   height: auto;
   
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #D6EEEE;
-}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px;
  
 </style>
 </head>
@@ -45,18 +37,15 @@ tr:nth-child(even) {
 <p align="center"><img src="headerbanner.png"></p>
  <h1>Welcome to the Mars Hackathon</h1>
  <p>Again, welcome to the Mars Hackathon! In this infrastructure trial, you'll get the opportunity (space pun there) to solve a variety of problems. Each of the problems will offer you a letter that is a part of the final test. Having all of the correct letters and placing them in the correct order will give you access to the final page. Feel free to click around and explore the pages in any order! Best wishes, your colleagues in NASA.</p>
-<p><table>
- <tr>
-  <td>Colony Connection</td>
-  <td>SOS Messages</td>
-  <td>Mars Rover</td>
- </tr>
- <tr>
-  <th>Mars Landing</th>
-  <th>Networking Space</th>
-  <th>Parity Bits</th>
- </tr>
- </table>
- </p>
+
+   <div class="column" style="background-color:#aaa;">Colony Connection<br>
+ SOS Messages<br></div>
+  <div class="column" style="background-color:#bbb;">
+ Mars Rover<br>
+ Mars Landing</div>
+  <div class="column" style="background-color:#ccc;">
+ Networking Space<br>
+ Parity Bits</div>
+
  </body>
 </html>
