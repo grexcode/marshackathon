@@ -25,12 +25,18 @@ font-size: 22px;
   max-width: 100%;
   height: auto;
   
-  table {
-  border: 0px solid;
-        font-family: "Courier New";
-color: #808a89;    
-font-size: 22px;
-     padding: 25px;
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
 }
  
 </style>
@@ -46,9 +52,9 @@ font-size: 22px;
   <td>Mars Rover</td>
  </tr>
  <tr>
-  <td>Mars Landing</td>
-  <td>Networking Space</td>
-  <td>Parity Bits</td>
+  <th>Mars Landing</th>
+  <th>Networking Space</th>
+  <th>Parity Bits</th>
  </tr>
  </table>
  </body>
