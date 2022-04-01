@@ -42,6 +42,20 @@ And already implemented K connections (each given as a pair of coloney's number 
   <p>
 However, NASA want to guarantee that every Colony should be connected from every other colony either directly or via some other colony. the cost of pipeline between any two colony (let say colony i and j) will be (Xj-Xi)^2 + (Yj-Yi)^2 .
 you need to minimize the cost of implementing new pipelines and connect all the colonies either directly or via some other colony..</p>
- 
+ <pre>
+ Input
+The first line of the input consists of an integer T indicating the number of test cases T test cases as follow
+first line of each test case consists of N i.e. total number of colonies next N lines consists of two integer each separated by a space i.e. X and Y coordinate of colony
+after these N line next line consists an integer K representing total already implemented pipelines
+next K lines consists of two integers separated by a space.These two integers give a pair of colony numbers which are already connected by a pipeline. each test case is seprated by a blank line.
+ </pre>
+ <pre>
+ Output
+print each new connection on a new line as a pair of colonies number
+these pairs are sorted in increasing order on the basis of cost
+the first number in each pair can't be greater than the second number.
+if no new connection required print "well established" without quotes on a new line
+output of each test case is seprated by a blank line.
+ </pre>
  </body>
 </html>
