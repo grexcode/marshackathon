@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" type="image/jpg" href="hacker.png"/>
+ <title>Mars Hackathon: Mars Rover</title>
+<style>
+body {
+background-color: #242124;
+}
+ 
+h1 { 
+font-family: "Courier New";   
+color: #808a89;   
+font-size: 50px; 
+ text-align: center;
+} 
+ 
+ a {
+ font-family: "Courier New";   
+color: #FFFFFF; 
+  font-size: 22px;
+ }
+ 
+p {
+font-family: "Courier New";
+color: #808a89;    
+font-size: 22px;
+ text-align: center;
+  }
+ 
+ img {
+  max-width: 100%;
+  height: auto;
+ }
+ 
+ html {
+  font-family: "Courier New";
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+ font-size: 22px;
+ table-layout: fixed; 
+ width: 80%;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+caption {
+  padding: 10px;
+}
+ 
+ .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+ </style>
+</head>
+ 
+<body>
+<p align="center"><img src="headerbanner.png"></p>
+ <h1>Mars Rover</h1>
+ <p>Suppose you are living in 2098, NASA already reached on Mars and established several colonies over there but water supply system is not so good implemented.
+so NASA hired you to solve this problem you are given N pairs of cordinates(x,y) representing N colonies numbered 1,2,3,4,.......,N.
+And already implemented K connections (each given as a pair of coloney's number like if a pipeline is there between colony 3 and 4 then it is represented as (3,4) or (4,3) ).
+  </p>
+  <p>
+However, NASA want to guarantee that every Colony should be connected from every other colony either directly or via some other colony. the cost of pipeline between any two colony (let say colony i and j) will be (Xj-Xi)^2 + (Yj-Yi)^2 .
+you need to minimize the cost of implementing new pipelines and connect all the colonies either directly or via some other colony..</p>
+ 
+ 
+ <table class="center">
+      <tr>
+       <td>
+        <b>Input</b><br>
+The first line of the input consists of an integer T indicating the number of test cases T test cases as follow<br>
+first line of each test case consists of N i.e. total number of colonies next N lines consists of two integer each separated by a space i.e. X and Y coordinate of colony<br>
+after these N line next line consists an integer K representing total already implemented pipelines<br>
+next K lines consists of two integers separated by a space.These two integers give a pair of colony numbers which are already connected by a pipeline. each test case is separated by a blank line.
+       </td>
+      </tr>
+      <tr>
+        <td>
+         <b>Output</b><br>
+print each new connection on a new line as a pair of colonies number<br>
+these pairs are sorted in increasing order on the basis of cost<br>
+the first number in each pair can't be greater than the second number.<br>
+if no new connection required print "well established" without quotes on a new line
+output of each test case is seprated by a blank line.
+       </td>
+      </tr>
+    </table>
+ <p>
+  For the final problem, take the total lines of final output and find that corresponding letter in the alphabet for the solution.
+  <br>
+  <a href="https://grexcode.github.io/marshackathon/">Return to Home</a>
+ </p>
+ </body>
+</html>
