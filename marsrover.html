@@ -81,38 +81,35 @@ caption {
 <body>
 <p align="center"><img src="headerbanner.png"></p>
  <h1>Mars Rover</h1>
- <p>Suppose you are living in 2098, NASA already reached on Mars and established several colonies over there but water supply system is not so good implemented.
-so NASA hired you to solve this problem you are given N pairs of cordinates(x,y) representing N colonies numbered 1,2,3,4,.......,N.
-And already implemented K connections (each given as a pair of coloney's number like if a pipeline is there between colony 3 and 4 then it is represented as (3,4) or (4,3) ).
-  </p>
-  <p>
-However, NASA want to guarantee that every Colony should be connected from every other colony either directly or via some other colony. the cost of pipeline between any two colony (let say colony i and j) will be (Xj-Xi)^2 + (Yj-Yi)^2 .
-you need to minimize the cost of implementing new pipelines and connect all the colonies either directly or via some other colony..</p>
+ <p>A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.</p>
+<p>A rover's position and location is represented by a combination of x and y co-ordinates and a letter representing one of the four cardinal compass points. The plateau is divided up into a grid to simplify navigation. An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North.</p>
+<p>
+In order to control a rover, NASA sends a simple string of letters. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.</p>
+ <p>Assume that the square directly North from (x, y) is (x, y+1).</p>
  
  
  <table class="center">
       <tr>
        <td>
         <b>Input</b><br>
-The first line of the input consists of an integer T indicating the number of test cases T test cases as follow<br>
-first line of each test case consists of N i.e. total number of colonies next N lines consists of two integer each separated by a space i.e. X and Y coordinate of colony<br>
-after these N line next line consists an integer K representing total already implemented pipelines<br>
-next K lines consists of two integers separated by a space.These two integers give a pair of colony numbers which are already connected by a pipeline. each test case is separated by a blank line.
+The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.<br>
+
+The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover's position, and the second line is a series of instructions telling the rover how to explore the plateau. <br>
+
+The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover's orientation.<br>
+
+Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving.
        </td>
       </tr>
       <tr>
         <td>
          <b>Output</b><br>
-print each new connection on a new line as a pair of colonies number<br>
-these pairs are sorted in increasing order on the basis of cost<br>
-the first number in each pair can't be greater than the second number.<br>
-if no new connection required print "well established" without quotes on a new line
-output of each test case is seprated by a blank line.
+The output for each rover should be its final co-ordinates and heading.
        </td>
       </tr>
     </table>
  <p>
-  For the final problem, take the total lines of final output and find that corresponding letter in the alphabet for the solution.
+  In the finalHeading line of the main Java code created, pull the two capital letters for the final password.
   <br>
   <a href="https://grexcode.github.io/marshackathon/">Return to Home</a>
  </p>
