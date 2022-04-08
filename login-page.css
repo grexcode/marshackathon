@@ -4,7 +4,7 @@ html {
 
 body {
   background-image: url("matrix.jpg");
-  height: 50%;
+  height: 70%;
   margin: 0;
   font-family: "Courier New";
   color: chartreuse;
@@ -14,8 +14,8 @@ body {
 }
 
 #main-holder {
-  width: 30%;
-  height: 40%;
+  width: 40%;
+  height: 50%;
   display: grid;
   justify-items: center;
   align-items: center;
