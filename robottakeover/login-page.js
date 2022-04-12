@@ -8,7 +8,7 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "8363475001" && password === "Aliena") {
+    if (username === "8363475001" && password === "Aliens") {
         alert("You have successfully stopped the takeover.");
         location.href = "https://grexcode.github.io/marshackathon/robottakeover/itisover.html";
     } else {
