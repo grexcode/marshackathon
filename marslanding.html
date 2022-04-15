@@ -81,38 +81,242 @@ caption {
 <body>
 <p align="center"><img src="headerbanner.png"></p>
  <h1>Mars Landing</h1>
- <p>Suppose you are living in 2098, NASA already reached on Mars and established several colonies over there but water supply system is not so good implemented.
-so NASA hired you to solve this problem you are given N pairs of cordinates(x,y) representing N colonies numbered 1,2,3,4,.......,N.
-And already implemented K connections (each given as a pair of coloney's number like if a pipeline is there between colony 3 and 4 then it is represented as (3,4) or (4,3) ).
+ <p>Below rests some code NASA uses to replicate Mars Landings with simple devices on Earth. While the code given consistes of only snippets, the manuevers given and the movement done are fairly accurate to what you would experience if coding a real rover.
   </p>
   <p>
-However, NASA want to guarantee that every Colony should be connected from every other colony either directly or via some other colony. the cost of pipeline between any two colony (let say colony i and j) will be (Xj-Xi)^2 + (Yj-Yi)^2 .
-you need to minimize the cost of implementing new pipelines and connect all the colonies either directly or via some other colony..</p>
+Your task is to parse the code given and look for all the notations. Pull the first letter after the notations for letters towards the final solution. There are 14 possible notations and letters available.</p>
  
  
  <table class="center">
       <tr>
        <td>
-        <b>Input</b><br>
-The first line of the input consists of an integer T indicating the number of test cases T test cases as follow<br>
-first line of each test case consists of N i.e. total number of colonies next N lines consists of two integer each separated by a space i.e. X and Y coordinate of colony<br>
-after these N line next line consists an integer K representing total already implemented pipelines<br>
-next K lines consists of two integers separated by a space.These two integers give a pair of colony numbers which are already connected by a pipeline. each test case is separated by a blank line.
+<pre>
+class GameObject:
+
+    def __init__(self, image_path, x, y, width, height):
+        # Player image import and resize
+        object_image = pygame.image.load(image_path)
+        self.image = pygame.transform.scale(object_image, (width, height))
+
+        self.x_pos = x
+        self.y_pos = y
+
+        self.width = width
+        self.height = height
+
+    # Draw the object by blitting it onto the background(game_screen)
+    def draw(self, background):
+        background.blit(self.image, (self.x_pos, self.y_pos))
+</pre>
        </td>
       </tr>
       <tr>
-        <td>
-         <b>Output</b><br>
-print each new connection on a new line as a pair of colonies number<br>
-these pairs are sorted in increasing order on the basis of cost<br>
-the first number in each pair can't be greater than the second number.<br>
-if no new connection required print "well established" without quotes on a new line
-output of each test case is seprated by a blank line.
+       <td>
+<pre>
+   #update all game graphics
+            pygame.display.update()
+            clock.tick(self.TICK_RATE)
+
+        # Restart game loop for wins, break if losses
+        if did_win:
+            self.run_game_loop(level_speed + 0.5)
+        else:
+            return
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+   # End game if collision between player and enemy or treasure
+                # Close game if we lose and restart game loop if we win
+                if player.detect_collision(enemy_0):
+                    is_game_over = True
+                    did_win = False
+                    text = font.render('You Lose!', True, BLACK_COLOR)
+                    self.game_screen.blit(text, (275, 350))
+                    pygame.display.update()
+                    clock.tick(1)
+                    break
+                elif player.detect_collision(dest):
+                    is_game_over = True
+                    did_win = True
+                    text = font.render('You Win!', True, BLACK_COLOR)
+                    self.game_screen.blit(text, (275, 350))
+                    pygame.display.update()
+                    clock.tick(1)
+                    break
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+  # Move and draw enemy position
+                enemy_0.move(self.width)
+                enemy_0.draw(self.game_screen)
+
+
+                if level_speed > 2:
+                    enemy_1.move(self.width)
+                    enemy_1.draw(self.game_screen)
+                if level_speed > 4:
+                    enemy_2.move(self.width)
+                    enemy_2.draw(self.game_screen)
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+  #Gameplay.
+        while not is_game_over:
+
+            #gets all the events occuring at any given time
+            for event in pygame.event.get():
+            #If there is a quit type event - exit out of loop
+                if event.type == pygame.QUIT:
+                    is_game_over = True
+                # Detect when key is pressed down
+                elif event.type == pygame.KEYDOWN:
+                    # Move up if up key pressed
+                    if event.key == pygame.K_UP:
+                        direction = 1
+                    # Move down if down key is pressed
+                    elif event.key == pygame.K_DOWN:
+                        direction = -1
+                # Detect when key is released
+                elif event.type == pygame.KEYUP:
+                    # Stop movement when key no longer pressed
+                    if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                        direction = 0
+                print(event)
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+ #Create a destination
+        dest = GameObject('Assets/destination.png', 375, 50, 50, 50)
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+# Initialize pygame
+pygame.init()
+
+new_game = Game('Assets/terrain.jpg', SCREEN_TITLE, SCREEN_WIDTH, SCREEN_HEIGHT)
+new_game.run_game_loop(1)
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+   #create the window of specified size in which to display the game
+        self.game_screen = pygame.display.set_mode((width, height))
+        #set the game window color to white
+        self.game_screen.fill(WHITE_COLOR)
+        pygame.display.set_caption(title)
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+from gpiozero import LED
+from ptprotoplus import adc
+from time import sleep
+from multiprocessing import Process
+
+uvled = LED(4)
+redled = LED(10)
+irled = LED(11)
+light = adc.ADCProbe()
+
+print("Transmitting")
+def loop1():
+    while 1:
+        uvled.on()
+        sleep(3)
+        print(light.read_value(0))
+        uvled.off()
+        redled.on()
+        sleep(3)
+        print(light.read_value(0))
+        redled.off()
+        irled.on()
+        sleep(3)
+        print(light.read_value(0))
+        irled.off()
+def loop2():
+    while 1:
+        if light.read_value(0) > 120:
+            print("receiving")
+            sleep(2)
+        else:
+            print("...")
+            sleep(2)
+if __name__ == '__main__':
+    lights = Process(target=loop1)
+    sensor = Process(target=loop2)
+    lights.start()
+    sensor.start()
+    lights.join()
+    sensor.join()
+</pre>
+       </td>
+      </tr>
+        <tr>
+       <td>
+<pre>
+Morse_Dict = { 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.',
+'F':'..-.', 'G':'--.', 'H':'....', 'I':'..', 'J':'.---', 'K':'-.-',
+'L':'.-..', 'M':'--', 'N':'-.', 'O':'---', 'P':'.--.', 'Q':'--.-',
+'R':'.-.', 'S':'...', 'T':'-', 'U':'..-', 'V':'...-', 'W':'.--',
+'X':'-..-', 'Y':'-.--', 'Z':'--..'}
+
+def encrypt(message):
+    convert = ' '
+    for letter in message:
+        if letter != ' ':
+            convert += Morse_Dict[letter] + ' '
+        else:
+            convert += ' '
+    return convert
+
+def decrypt(message):
+    message += ' '
+    decode = ''
+    text = ''
+    for letter in message:
+        if (letter != ' '):
+            i = 0
+            text += letter
+        else:
+            i += 1
+            if i == 2:
+                decode += ' '
+            else:
+                decode += list(Morse_Dict.keys())[list(Morse_Dict.values()).index(text)]
+                text = ''
+    return decode
+
+def main():
+    text = input("Enter Message: ")
+    output = encrypt(text.upper())
+    print(output)
+if __name__ == '__main__':
+    main()
+</pre>
        </td>
       </tr>
     </table>
  <p>
-  For the final problem, take the total lines of final output and find that corresponding letter in the alphabet for the solution.
+ Keep a written log of the letters found in each notation for the final solution.
   <br>
   <a href="https://grexcode.github.io/marshackathon/">Return to Home</a>
  </p>
