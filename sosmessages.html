@@ -92,6 +92,44 @@ caption {
 The original message was SOSSOS. Two of the message’s characters were changed in transit.
        </td>
       </tr>
+        <tr>
+       <td>
+        <b>Possible Code</b><br>
+<pre>
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        int numChanged = 0;
+        
+        for(int i = 0; i < S.length(); i++)
+        {
+            if(i % 3 == 1)
+            {
+                if(S.charAt(i) != 'O')
+                {
+                    numChanged++;
+                }
+            }
+            else
+            {
+                if(S.charAt(i) != 'S')
+                {
+                    numChanged++;
+                }
+            }
+        }
+        
+        System.out.println(numChanged);
+    }
+</pre>
+       </td>
+      </tr>
     </table>
  <p>
   For the final problem, run SOSSPSSQSSOR through your program. Find the corresponding letter in the alphabet for that output.
