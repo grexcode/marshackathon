@@ -7,7 +7,7 @@ loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const password = loginForm.password.value;
 
-    if (password === "june1817") {
+    if (password === "upgirdedvisards") {
         alert("You have successfully logged in.");
         location.href = "https://grexcode.github.io/marshackathon/endsolution.html";
     } else {
